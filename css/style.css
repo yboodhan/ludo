@@ -5,19 +5,18 @@ div {
 .line {
     display: flex;
     justify-content: center;
-    margin: 0px;
+    margin: 0em;
 }
 
 .box {
-    border: .2px solid black;
-    width: 2em;
-    height: 2em;
-}
-
-.middle-board {
+    color: black;
     display: flex;
     justify-content: center;
-    margin: 0px;
+    align-items: center;
+    border: 0.01em solid black;
+    background: white;
+    width: 2em;
+    height: 2em;
 }
 
 .grid3 {
@@ -26,20 +25,72 @@ div {
     align-items: center;
     height: 6em;
     width: 6em;
-    margin: 0px;
+    margin: 0em;
 }
 
 .triangles {
     width: 0;
     height: 0;
-    border-bottom: 2.95em solid yellow;
-    border-left: 2.95em solid green;
-    border-right: 2.95em solid blue;
-    border-top: 2.95em solid red;
-    z-index: 1;
+    border-bottom: 2.95em solid gold;
+    border-left: 2.95em solid skyblue;
+    border-right: 2.95em solid limegreen;
+    border-top: 2.95em solid crimson;
 }
 
 .part {
     display: inline-block;
-    border: .2px solid black;
+    border: 0.01em solid black;
+}
+
+.board-top, .board-middle, .board-bottom {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    border: 0.06em solid black;
+}
+
+.base {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5em;
+    border: 0.06em solid black;
+    width: 11em;
+    height: 11em;
+    border-radius: 50%
+}
+
+.board {
+    padding: 1em;
+    display: inline-block;
+    border: 1px solid black;
+}
+
+.token-home {
+    margin: 1em;
+    border: 0.06em solid black;
+    width: 2.5em;
+    height: 2.5em;
+    background: white;
+    border-radius: 50%
+}
+
+.blue-home, .blue-box {
+    background: skyblue;
+}
+
+.red-home, .red-box {
+    background: crimson;
+}
+
+.yellow-home, .yellow-box {
+    background: gold;
+}
+
+.green-home, .green-box {
+    background: limegreen;
 }
