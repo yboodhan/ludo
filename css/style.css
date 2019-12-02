@@ -9,6 +9,7 @@ div {
 }
 
 .box {
+    position: relative;
     color: black;
     display: flex;
     justify-content: center;
@@ -61,16 +62,21 @@ div {
     border: 0.06em solid black;
     width: 11em;
     height: 11em;
-    border-radius: 50%
+    border-radius: 50%;
 }
 
 .board {
     padding: 1em;
     display: inline-block;
     border: 1px solid black;
+    border-radius: 5%;
+    padding: 1.5em;
 }
 
 .token-home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 1em;
     border: 0.06em solid black;
     width: 2.5em;
@@ -79,18 +85,30 @@ div {
     border-radius: 50%
 }
 
-.blue-home, .blue-box {
+.blue-home, .blue-box, .blue-token {
     background: skyblue;
 }
 
-.red-home, .red-box {
+.red-home, .red-box, .red-token {
     background: crimson;
 }
 
-.yellow-home, .yellow-box {
+.yellow-home, .yellow-box, .yellow-token {
     background: gold;
 }
 
-.green-home, .green-box {
+.green-home, .green-box, .green-token {
     background: limegreen;
+}
+
+.token {
+    position: absolute;
+    box-shadow: .1em .1em rgb(105, 101, 101);
+    margin: 0em;
+    border: .2em solid rgb(119, 115, 115);
+    border-style: outset;
+    width: 1.6em;
+    height: 1.6em;
+    border-radius: 50%;
+    z-index: 2;
 }
