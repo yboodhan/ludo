@@ -1,0 +1,45 @@
+div {
+    text-align: center;
+}
+
+.line {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+}
+
+.box {
+    border: .2px solid black;
+    width: 2em;
+    height: 2em;
+}
+
+.middle-board {
+    display: flex;
+    justify-content: center;
+    margin: 0px;
+}
+
+.grid3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 6em;
+    width: 6em;
+    margin: 0px;
+}
+
+.triangles {
+    width: 0;
+    height: 0;
+    border-bottom: 2.95em solid yellow;
+    border-left: 2.95em solid green;
+    border-right: 2.95em solid blue;
+    border-top: 2.95em solid red;
+    z-index: 1;
+}
+
+.part {
+    display: inline-block;
+    border: .2px solid black;
+}
