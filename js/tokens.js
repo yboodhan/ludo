@@ -32,7 +32,7 @@ class Token {
     //Move token one tile at a time (total moves)
     moving() {
         let divId = this.piece.id
-        $('#'+divId).detach().prependTo($('.box[data-tile-number="'+ this.currentTile +'"]'))
+        $('#'+divId).detach().appendTo($('.box[data-tile-number="'+ this.currentTile +'"]'))
         this.currentTile++
     }
     move(steps) {
@@ -40,7 +40,7 @@ class Token {
         for (let i = 1; i <= steps; i++) {
             setTimeout(() => {
                 this.moving()
-            }, 500 * i)
+            }, 200 * i)
         }
     }
 }

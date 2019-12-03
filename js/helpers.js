@@ -37,13 +37,26 @@ const removeTokenListener = (arr) => {
 //Lets the player visually see the tokens in play
 const addTokenHighlight = (arr) => {
     for (let i = 0; i < arr.length; i++) {
-        arr[i].piece.style.border = '0.25em solid green)'
+        flashInterval.push(setInterval( () => {
+            $('#'+arr[i].piece.id).toggleClass('piecesInPlay')
+            console.log('flashing')
+        }, 300))
     }
 }
 
+//Removes flashing effect from tokens in play
 const removeTokenHighlight = () => {
-    for (let i = 0; i < arr.length; i++) {
-        arr[i].piece.style.border = '0.2em solid rgb(119, 115, 115)'
+    for (let i = 0; i < flashInterval.length; i++) {
+        clearInterval(flashInterval[i])
+    }
+
+    let htmlCollection = document.getElementsByClassName('piecesInPlay')
+    let highlightedTokens = Array.from(htmlCollection)
+
+    if (highlightedTokens.length > 0) {
+        for (let i = 0; i < highlightedTokens.length; i++) {
+            highlightedTokens[i].classList.remove('piecesInPlay')
+        }
     }
 }
 
@@ -51,9 +64,11 @@ const removeTokenHighlight = () => {
 const currentTokens = () => {
     if (moves == 6 || moves == 1) {
         tokensInPlay = tokens
+        addTokenHighlight(tokensInPlay)
         addTokenListener(tokensInPlay)
     } else {
         tokensInPlay = tokens.filter( (token) => token.inPlay)
+        addTokenHighlight(tokensInPlay)
         addTokenListener(tokensInPlay)
 
         if (tokensInPlay.length == 0) {
@@ -61,11 +76,13 @@ const currentTokens = () => {
         }
     }
 
-    addTokenHighlight(tokensInPlay)
 }
 
 //Plays selected token for current player
 const moveToken = (e) => {
+
+    removeTokenHighlight()
+
     console.log('move')
     removeTokenListener(tokensInPlay)
     currentTokenInPlay = tokensInPlay.filter( (token) => token.piece == e.target)
@@ -76,11 +93,12 @@ const moveToken = (e) => {
 
 //End the player's turn and go to the next player
 const endPlayerTurn = () => {
+
     if (moves != 6) {
         changeTurn()
     }
 
-    // removeTokenHighlight(tokensInPlay)
+    flashInterval = []
     console.log('ended turn')
     document.getElementById('roll').addEventListener('click', playGame)
 }

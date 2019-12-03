@@ -8,6 +8,8 @@ let tokens = []
 let tokensInPlay = []
 let currentToken = []
 
+let flashInterval=[]
+
 let redTokens = [], blueTokens = [], greenTokens = [], yellowTokens = []
 
 let blueToken_1, blueToken_2, blueToken_3, blueToken_4

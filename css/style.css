@@ -105,8 +105,7 @@ div {
     position: absolute;
     box-shadow: .1em .1em rgb(105, 101, 101);
     margin: 0em;
-    border: 0.2em solid rgb(119, 115, 115);
-    border-style: outset;
+    border: 0.2em outset rgb(119, 115, 115);
     width: 1.6em;
     height: 1.6em;
     border-radius: 50%;
@@ -115,4 +114,13 @@ div {
 
 #roll {
     display: none;
+}
+
+.piecesInPlay {
+    border: 0.2em outset #f06292;
+    background: #ba68c8;
+}
+
+.material-icons {
+    vertical-align: bottom;
 }
