@@ -13,13 +13,18 @@
 </head>
 <body>
     <div class="container">
+
+        <div class="controls">
+            <button id="roll">Roll</button>
+        </div>
+
         <div class="board">
             <div class="board-top">
                 <div class="blue-home base">
-                    <div class="token-home"><div class="blue-token token" data-token="blue-1"></div></div>
-                    <div class="token-home"><div class="blue-token token" data-token="blue-2"></div></div>
-                    <div class="token-home"><div class="blue-token token" data-token="blue-3"></div></div>
-                    <div class="token-home"><div class="blue-token token" data-token="blue-4"></div></div>
+                    <div class="token-home"><div class="blue-token token" id="blue-1"></div></div>
+                    <div class="token-home"><div class="blue-token token" id="blue-2"></div></div>
+                    <div class="token-home"><div class="blue-token token" id="blue-3"></div></div>
+                    <div class="token-home"><div class="blue-token token" id="blue-4"></div></div>
                 </div>
                 <div class="grid1 part">
                         <div class="line">
@@ -54,10 +59,10 @@
                         </div>
                 </div>
                 <div class="red-home base">
-                    <div class="token-home"><div class="red-token token" data-token="red-1"></div></div>
-                    <div class="token-home"><div class="red-token token" data-token="red-2"></div></div>
-                    <div class="token-home"><div class="red-token token" data-token="red-3"></div></div>
-                    <div class="token-home"><div class="red-token token" data-token="red-4"></div></div>
+                    <div class="token-home"><div class="red-token token" id="red-1"></div></div>
+                    <div class="token-home"><div class="red-token token" id="red-2"></div></div>
+                    <div class="token-home"><div class="red-token token" id="red-3"></div></div>
+                    <div class="token-home"><div class="red-token token" id="red-4"></div></div>
                 </div>
             </div>
     
@@ -122,10 +127,10 @@
     
             <div class="board-bottom">
                 <div class="yellow-home base">
-                    <div class="token-home"><div class="yellow-token token" data-token="yellow-1"></div></div>
-                    <div class="token-home"><div class="yellow-token token" data-token="yellow-2"></div></div>
-                    <div class="token-home"><div class="yellow-token token" data-token="yellow-3"></div></div>
-                    <div class="token-home"><div class="yellow-token token" data-token="yellow-4"></div></div>
+                    <div class="token-home"><div class="yellow-token token" id="yellow-1"></div></div>
+                    <div class="token-home"><div class="yellow-token token" id="yellow-2"></div></div>
+                    <div class="token-home"><div class="yellow-token token" id="yellow-3"></div></div>
+                    <div class="token-home"><div class="yellow-token token" id="yellow-4"></div></div>
                 </div>
                 <div class="grid5 part">
                     <div class="line">
@@ -160,10 +165,10 @@
                     </div>
                 </div>
                 <div class="green-home base">
-                    <div class="token-home"><div class="green-token token" data-token="green-1"></div></div>
-                    <div class="token-home"><div class="green-token token" data-token="green-2"></div></div>
-                    <div class="token-home"><div class="green-token token" data-token="green-3"></div></div>
-                    <div class="token-home"><div class="green-token token" data-token="green-4"></div></div>
+                    <div class="token-home"><div class="green-token token" id="green-1"></div></div>
+                    <div class="token-home"><div class="green-token token" id="green-2"></div></div>
+                    <div class="token-home"><div class="green-token token" id="green-3"></div></div>
+                    <div class="token-home"><div class="green-token token" id="green-4"></div></div>
                 </div>
             </div>
         </div>
@@ -173,6 +178,8 @@
     <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.3/js/materialize.min.js"></script>
     <script src="./js/globals.js"></script>
+    <script src="./js/tokens.js"></script>
+    <script src="./js/helpers.js"></script>
     <script src="./js/moves.js"></script>
     <script src="./js/scores.js"></script>
     <script src="./js/script.js"></script>

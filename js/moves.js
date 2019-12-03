@@ -1,11 +1,12 @@
-//Roll a random die
-moves = Math.ceil(Math.random() * 6)
-console.log(moves)
+
+
+
+//Determine current tile number(start number+moves)
 
 //On roll of a 6, release a token to start
 
 const moving = (move) => {
-    blueToken = $('.token[data-token=\'blue-1\']').detach()
+    blueToken = $('#blue-1').detach()
     blueToken.prependTo($('.box[data-tile-number="'+move+'"]'))
     console.log(move)
 }
