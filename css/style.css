@@ -105,7 +105,7 @@ div {
     position: absolute;
     box-shadow: .1em .1em rgb(105, 101, 101);
     margin: 0em;
-    border: .2em solid rgb(119, 115, 115);
+    border: 0.2em solid rgb(119, 115, 115);
     border-style: outset;
     width: 1.6em;
     height: 1.6em;

@@ -40,7 +40,7 @@ class Token {
         for (let i = 1; i <= steps; i++) {
             setTimeout(() => {
                 this.moving()
-            }, 1000 * i)
+            }, 500 * i)
         }
     }
 }

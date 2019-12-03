@@ -3,6 +3,11 @@ let RED_START_TILE = 14
 let GREEN_START_TILE = 27
 let YELLOW_START_TILE = 40
 
+let moves = 0
+let tokens = []
+let tokensInPlay = []
+let currentToken = []
+
 let redTokens = [], blueTokens = [], greenTokens = [], yellowTokens = []
 
 let blueToken_1, blueToken_2, blueToken_3, blueToken_4
