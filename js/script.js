@@ -8,21 +8,19 @@ window.addEventListener('DOMContentLoaded', () => {
         document.getElementById('roll').style.display = 'inline-block'
     })
 
-    //On roll, start a player's turn and execute the game
-    document.getElementById('roll').addEventListener('click', () => {
-        let moves = rollDie()
+    //Function to execute the game
+    const playGame = () => {
 
-        let tokens = player()
+        document.getElementById('roll').removeEventListener('click', playGame) //Stop from rolling while playing turn
+
+        let moves = rollDie() //Roll die and get a value to move
+
+        let tokens = player() //Get the colored tokens for the player's turn
 
         moveToken(tokens, moves)
+    }
 
-        //roll the dice
-
-        //find player
-
-        //find token
-
-
-    })
+    //On roll, remove roll listener, start a player's turn and execute the game
+    document.getElementById('roll').addEventListener('click', playGame)
 })
 

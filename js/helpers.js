@@ -36,7 +36,7 @@ const changeTurn = () => {
 //if not, add event listeners to ones on board, boolean attribute
 //on click, move
 
-
+const 
 
 
 //Gets player tokens
