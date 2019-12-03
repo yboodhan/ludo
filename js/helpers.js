@@ -6,62 +6,60 @@ const addTokenListener = (arr) => {
     }
 }
 
-// addClickListener(document.getElementsByClassName('token'))
-addTokenListener(blueTokens)
-
 //Roll a random die
 const rollDie = () => {
-    moves = Math.ceil(Math.random() * 6)
+    return Math.ceil(Math.random() * 6)
 }
 
-//To start, roll a 6 or roll more than 3 times
-const initialize = () => {
-    initializeTurns++
-    turn++
-    console.log(turn)
-    console.log(initializeTurns)
+//Change player turn
+const changeTurn = () => {
+    if (isPlayerOneTurn) {
+        isPlayerOneTurn = false
+        isPlayerTwoTurn = true
+    }
+    if (isPlayerTwoTurn) {
+        isPlayerTwoTurn = false
+        isPlayerThreeTurn = true
+    }
+    if (isPlayerThreeTurn) {
+        isPlayerThreeTurn = false
+        isPlayerFourTurn = true
+    }
+    if (isPlayerFourTurn) {
+        isPlayerFourTurn = false
+        isPlayerOneTurn = true
+    }
+}
 
-    rollDie()
-    if (moves == 6 || initializeTurns/4 > 3) {
+//Die conditions
+//if moves==6, add event listeners to all
+//if not, add event listeners to ones on board, boolean attribute
+//on click, move
+
+
+
+
+//Gets player tokens
+const player = () => {
+    if (isPlayerOneTurn) {
+        //die conditionals
+        return blueTokens
+    }
+    if (isPlayerTwoTurn) {
+        return redTokens
+    }
+    if (isPlayerThreeTurn) {
+        return greenTokens
+    }
+    if (isPlayerFourTurn) {
+        return yellowTokens
+    }
     
-        switch (turn) {
-            case 1:
-                isPlayerOneTurn = true
-                play()
-                break
-            case 2:
-                isPlayerTwoTurn = true
-                play()
-                break
-            case 3:
-                isPlayerThreeTurn = true
-                play()
-                break
-            case 4:
-                isPlayerFourTurn = true
-                play()
-        }
-    }
-    if (turn == 4) {
-        turn = 0
-    }
+    changeTurn()
 }
 
-//After initializing, play normally
-const play = () => {
-    if (isPlayerOneTurn == true) {
-        
-    }
-
-    if (isPlayerTwoTurn == true) {
-        
-    }
-
-    if (isPlayerThreeTurn == true) {
-        
-    }
-
-    if (isPlayerFourTurn == true) {
-        
-    }
+//Plays selected token for current player
+const moveToken = (tokens, moves) => {
+    console.log('playing')
+    tokens[0].move(moves)
 }

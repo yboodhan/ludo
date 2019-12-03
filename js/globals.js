@@ -4,7 +4,7 @@ let GREEN_START_TILE = 27
 let YELLOW_START_TILE = 40
 
 let turn = 0
-let moves = 0
+// let moves = 0
 let currentTile = 0
 let currentToken
 let currentPlayer
