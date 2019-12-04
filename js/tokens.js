@@ -33,32 +33,51 @@ class Token {
     }
 
     //Move token one tile at a time (total moves)
-    moving() {
-        console.log('moving', this.currentTile)
-        let divId = this.piece.id
-        $('#'+divId).detach().appendTo($('.box[data-tile-number="'+ this.currentTile +'"]'))
-        this.currentTile++
+    moving(steps) {
 
+        this.totalMoves++
+        console.log('total moves', this.totalMoves)
+
+        //If the token hasn't made a full round, do not allow it into a color zone
         if (this.currentTile > 52 && this.totalMoves <= 51) {
             console.log('rollover')
             this.currentTile = 1
         }
 
-        if (this.currentTile >= this.zoneTile && this.totalMoves > 51) {
-            console.log('going to winning tile now')
-        }
-    }
-    move(steps) {
-        this.totalMoves += steps
-        console.log('total moves', this.totalMoves)
-        this.inPlay = true
-        if (this.totalMoves == 51) {
-            console.log('51!')
+        //If token moved 51 places, it can now enter it's colored zone
+        if (this.totalMoves == 52) {
+            console.log('enter zone!')
             this.currentTile = this.zoneTile
         }
+
+        console.log('moving', this.currentTile)
+        let divId = this.piece.id
+        $('#'+divId).detach().appendTo($('.box[data-tile-number="'+ this.currentTile +'"]'))
+        this.currentTile++
+
+    }
+    move(steps) {
+
+        this.inPlay = true
+
+        //If the player is in it's colored zone, only allow it to win if it rolls an exact value
+        if (this.currentTile >= this.zoneTile && this.totalMoves >= 52) {
+            console.log('going to winning tile now')
+            if (((this.endTile + 1) - (this.currentTile + steps)) == 0) {
+                console.log('this is a perfect roll, you win!')
+                //detach and add to winning box
+                //change class to re-size token
+                //update score
+            } else if (((this.endTile + 1) - (this.currentTile + steps)) > 0) {
+                console.log('you move a little closer to the winning tile')
+            } else {
+                this.inPlay = false
+            }
+        }
+
         for (let i = 1; i <= steps; i++) {
             setTimeout(() => {
-                this.moving()
+                this.moving(steps)
             }, 200 * i)
         }
     }

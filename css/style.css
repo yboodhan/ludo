@@ -121,14 +121,14 @@ div {
 }
 
 .token {
-    /* position: absolute; */
+    position: absolute;
     box-shadow: .1em .1em rgb(105, 101, 101);
     margin: 0em;
     border: 0.2em outset rgb(119, 115, 115);
     width: 1.6em;
     height: 1.6em;
     border-radius: 50%;
-    /* z-index: 2; */
+    z-index: 2;
 }
 
 #roll {
@@ -168,4 +168,5 @@ button {
 .win {
     width: 1.3em;
     height: 1.3em;
+    position: relative;
 }

@@ -84,6 +84,8 @@ const currentTokens = () => {
 //Plays selected token for current player
 const moveToken = (e) => {
 
+    document.getElementById('updateRoll').textContent = ''
+
     removeTokenHighlight()
 
     console.log('move')

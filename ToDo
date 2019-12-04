@@ -5,3 +5,7 @@ Put logic to winning
 Create scoreboard as table and Update
 Create AI version
 Allow to choose number of AI and number of actual players
+
+
+Green made 56 moves, never entered zone
+After in zone, still greater than condition met, moved back to start zone tile
