@@ -3,6 +3,11 @@ let RED_START_TILE = 14
 let GREEN_START_TILE = 27
 let YELLOW_START_TILE = 40
 
+let BLUE_ZONE_TILE = 53
+let RED_ZONE_TILE = 58
+let GREEN_ZONE_TILE = 63
+let YELLOW_ZONE_TILE = 68
+
 let moves = 0
 let tokens = []
 let tokensInPlay = []

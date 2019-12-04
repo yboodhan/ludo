@@ -1,3 +1,12 @@
+body {
+    text-align: center;
+}
+
+h3 {
+    font-weight: bold;
+    margin: 0.4em;
+}
+
 div {
     text-align: center;
 }
@@ -47,10 +56,6 @@ div {
     background-color: black;
     display: flex;
     justify-content: center;
-}
-
-.container {
-    border: 0.06em solid black;
 }
 
 .base {
@@ -124,3 +129,12 @@ div {
 .material-icons {
     vertical-align: bottom;
 }
+
+button {
+    margin-bottom: 1em;
+}
+
+/* .card {
+    display: block;
+    margin: 0.5em 8em 1.5em 8em;
+} */
