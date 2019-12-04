@@ -1,0 +1,7 @@
+Update scores after ending each turn
+Add score parameter to token object that tracks tokens on board and tokens winning
+Set kill conditions in as function to check after final move
+Put logic to winning
+Create scoreboard as table and Update
+Create AI version
+Allow to choose number of AI and number of actual players

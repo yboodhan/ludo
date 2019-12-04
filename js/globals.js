@@ -8,6 +8,11 @@ let RED_ZONE_TILE = 58
 let GREEN_ZONE_TILE = 63
 let YELLOW_ZONE_TILE = 68
 
+let BLUE_END_TILE = 57
+let RED_END_TILE = 62
+let GREEN_END_TILE = 67
+let YELLOW_END_TILE = 72
+
 let moves = 0
 let tokens = []
 let tokensInPlay = []
@@ -26,3 +31,6 @@ let isPlayerOneTurn = false
 let isPlayerTwoTurn = false
 let isPlayerThreeTurn = false
 let isPlayerFourTurn = false
+
+let message = ''
+let currentPlayer = 'Player 1 (blue)'

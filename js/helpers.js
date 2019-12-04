@@ -62,6 +62,9 @@ const removeTokenHighlight = () => {
 
 //Determine which pieces player can move
 const currentTokens = () => {
+
+    document.getElementById('updateRoll').textContent = 'Roll: ' + moves
+
     if (moves == 6 || moves == 1) {
         tokensInPlay = tokens
         addTokenHighlight(tokensInPlay)
@@ -93,9 +96,10 @@ const moveToken = (e) => {
 
 //End the player's turn and go to the next player
 const endPlayerTurn = () => {
-
     if (moves != 6) {
         changeTurn()
+    } else {
+        message.textContent = currentPlayer + ', you rolled a 6, roll again!'
     }
 
     flashInterval = []
@@ -106,19 +110,23 @@ const endPlayerTurn = () => {
 //Change player turn
 const changeTurn = () => {
     if (isPlayerOneTurn) {
-        console.log('player 1 turn ended')
+        message.textContent = 'Player 2 (red), it\'s your turn!'
+        currentPlayer = 'Player 2 (red)'
         isPlayerOneTurn = false
         isPlayerTwoTurn = true
     }else if (isPlayerTwoTurn) {
-        console.log('player 2 turn ended')
+        message.textContent = 'Player 3 (green), it\'s your turn!'
+        currentPlayer = 'Player 3 (green)'
         isPlayerTwoTurn = false
         isPlayerThreeTurn = true
     }else if (isPlayerThreeTurn) {
-        console.log('player 3 turn ended')
+        message.textContent = 'Player 4 (yellow), it\'s your turn!'
+        currentPlayer = 'Player 4 (yellow)'
         isPlayerThreeTurn = false
         isPlayerFourTurn = true
     }else if (isPlayerFourTurn) {
-        console.log('player 4 turn ended')
+        message.textContent = 'Player 1 (blue), it\'s your turn!'
+        currentPlayer = 'Player 1 (blue)'
         isPlayerFourTurn = false
         isPlayerOneTurn = true
     }
@@ -127,10 +135,13 @@ const changeTurn = () => {
 //Function to execute the game
 const playGame = () => {
 
+    message = document.getElementById('message')
+
+    message.textContent = currentPlayer + ', select a token to move.'
+
     document.getElementById('roll').removeEventListener('click', playGame) //Stop from rolling while playing turn
 
     moves = rollDie() //Roll die and get a value to move
-    console.log(moves)
 
     tokens = player() //Get the colored tokens for the player's turn
 

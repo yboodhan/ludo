@@ -39,12 +39,26 @@ div {
 }
 
 .triangles {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: space-around;
+    width: 6em;
+    height: 6em;
+    background: transparent;
+    z-index: 2;
+
+}
+
+.winningTile {
+    position: absolute;
     width: 0;
     height: 0;
     border-bottom: 2.95em solid gold;
     border-left: 2.95em solid skyblue;
     border-right: 2.95em solid limegreen;
     border-top: 2.95em solid crimson;
+    z-index: -1;
 }
 
 .part {
@@ -107,14 +121,14 @@ div {
 }
 
 .token {
-    position: absolute;
+    /* position: absolute; */
     box-shadow: .1em .1em rgb(105, 101, 101);
     margin: 0em;
     border: 0.2em outset rgb(119, 115, 115);
     width: 1.6em;
     height: 1.6em;
     border-radius: 50%;
-    z-index: 2;
+    /* z-index: 2; */
 }
 
 #roll {
@@ -124,6 +138,9 @@ div {
 .piecesInPlay {
     border: 0.2em outset #f06292;
     background: #ba68c8;
+    width: 1.7em;
+    height: 1.7em;
+    z-index: 3;
 }
 
 .material-icons {
@@ -134,7 +151,21 @@ button {
     margin-bottom: 1em;
 }
 
-/* .card {
+#message {
     display: block;
-    margin: 0.5em 8em 1.5em 8em;
-} */
+    background: #d4d3d481;
+    margin: 0em 10em 0.8em 10em;
+    border: 0.05em solid transparent;
+    border-radius: 10%;
+    font-size: 0.8em;
+    padding: 1em;
+}
+
+#updateRoll {
+    margin: 0 0 0.5em 0;
+}
+
+.win {
+    width: 1.3em;
+    height: 1.3em;
+}
