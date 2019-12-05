@@ -9,3 +9,17 @@ Allow to choose number of AI and number of actual players
 
 Green made 56 moves, never entered zone
 After in zone, still greater than condition met, moved back to start zone tile
+
+
+if 1 or 6 moves away, allow token to be moved
+it not, do not put token in play
+
+if token moves is not greater than or equal to 52, highlight it
+if it is, only highight if 1 or 6 moves away
+
+
+
+still keeps going instead of detaching
+
+
+choosing 5 highlighted, but 6 didnt

@@ -13,6 +13,8 @@ let RED_END_TILE = 62
 let GREEN_END_TILE = 67
 let YELLOW_END_TILE = 72
 
+let COMPLETE_ROUND_TILE_COUNT = 51
+
 let moves = 0
 let tokens = []
 let tokensInPlay = []

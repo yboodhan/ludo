@@ -1,6 +1,6 @@
 //Roll a random die
 const rollDie = () => {
-    return Math.ceil(Math.random() * 6)
+    return Math.ceil(Math.random() * 6) 
 }
 
 //Gets player tokens
@@ -40,7 +40,7 @@ const addTokenHighlight = (arr) => {
         flashInterval.push(setInterval( () => {
             $('#'+arr[i].piece.id).toggleClass('piecesInPlay')
             console.log('flashing')
-        }, 300))
+        }, 500))
     }
 }
 
@@ -66,11 +66,16 @@ const currentTokens = () => {
     document.getElementById('updateRoll').textContent = 'Roll: ' + moves
 
     if (moves == 6 || moves == 1) {
-        tokensInPlay = tokens
+        tokensInPlay = tokens.filter ( (token) => token.totalMoves <= COMPLETE_ROUND_TILE_COUNT)
+        tokens.forEach ( (token) => {
+            if ((((token.endTile + 1) - (token.currentTile + moves)) >= 0) && (token.currentTile >= token.zoneTile)) {
+                tokensInPlay.push(token)
+            }
+        })
         addTokenHighlight(tokensInPlay)
         addTokenListener(tokensInPlay)
     } else {
-        tokensInPlay = tokens.filter( (token) => token.inPlay)
+        tokensInPlay = tokens.filter( (token) => (token.inPlay && (((token.endTile + 1) - (token.currentTile + moves)) >= 0)))
         addTokenHighlight(tokensInPlay)
         addTokenListener(tokensInPlay)
 
@@ -78,21 +83,17 @@ const currentTokens = () => {
             endPlayerTurn()
         }
     }
-
 }
 
 //Plays selected token for current player
 const moveToken = (e) => {
-
     document.getElementById('updateRoll').textContent = ''
 
     removeTokenHighlight()
-
-    console.log('move')
     removeTokenListener(tokensInPlay)
+
     currentTokenInPlay = tokensInPlay.filter( (token) => token.piece == e.target)
     currentTokenInPlay[0].move(moves)
-
     endPlayerTurn()
 }
 
@@ -105,7 +106,6 @@ const endPlayerTurn = () => {
     }
 
     flashInterval = []
-    console.log('ended turn')
     document.getElementById('roll').addEventListener('click', playGame)
 }
 
