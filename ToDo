@@ -7,19 +7,21 @@ Create AI version
 Allow to choose number of AI and number of actual players
 
 
-Green made 56 moves, never entered zone
-After in zone, still greater than condition met, moved back to start zone tile
+Kill Logic:
+-before ending turn, check if box with current tile id has more than one children
+-if it does, then detach the child at index 0 and put it back to home base
+    -set home base as a piece for the token object property
+    -message that player killed player token
+-if not, end turn
+
+Win Logic:
+-before ending turn, check if all four tokens for the player is in winning tile
+    -count classes within tile and if count == 4, declare win
+-if win, stop game, pop up message, remove all listeners, replay
 
 
-if 1 or 6 moves away, allow token to be moved
-it not, do not put token in play
-
-if token moves is not greater than or equal to 52, highlight it
-if it is, only highight if 1 or 6 moves away
-
-
-
-still keeps going instead of detaching
-
-
-choosing 5 highlighted, but 6 didnt
+Score Logic:
+-killing score
+    -if killed, add 1 to kill score for player
+-token return score
+    -score is equal to how many tokens are in
