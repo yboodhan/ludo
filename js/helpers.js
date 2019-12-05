@@ -92,9 +92,20 @@ const moveToken = (e) => {
     removeTokenHighlight()
     removeTokenListener(tokensInPlay)
 
-    currentTokenInPlay = tokensInPlay.filter( (token) => token.piece == e.target)
+    let currentTokenInPlay = tokensInPlay.filter( (token) => token.piece == e.target)
     currentTokenInPlay[0].move(moves)
+
+    killToken(currentTokenInPlay[0])
+    console.log(currentTokenInPlay[0].currentTile+' dsfdsfsd')
+
     endPlayerTurn()
+}
+
+// Kills token
+const killToken = (killerToken) => {
+    let endBox = $('.box[data-tile-number="'+ killerToken.currentTile +'"]')
+    console.log(endBox)
+    console.log(endBox[0].children)
 }
 
 //End the player's turn and go to the next player

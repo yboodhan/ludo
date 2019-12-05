@@ -57,6 +57,7 @@ class Token {
         } else {
             $('#'+divId).detach().appendTo($('.box[data-tile-number="'+ this.currentTile +'"]'))
         }
+        console.log(this.currentTile)
     }
     move(steps) {
         this.inPlay = true
