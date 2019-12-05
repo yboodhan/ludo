@@ -13,7 +13,7 @@
 </head>
 <body>
 
-        <h3>LUDO!</h3>
+        <h2>LUDO!</h2>
 
         <div class="playGame">
             <div id="controls">
@@ -21,17 +21,15 @@
                 <button class="waves-effect waves-light btn purple lighten-2" id="roll">ROLL<i class="material-icons">casino</i></button>
             </div>
 
-            <p id="updateRoll"></p>
-
             <div id="message">Each player needs to roll a 1 or 6 to enter a token into the game. Click the play button to start.</div>
-            
+
             <div class="board">
                 <div class="board-top">
                     <div class="blue-home base">
-                        <div class="token-home"><div class="blue-token token" id="blue-1"></div></div>
-                        <div class="token-home"><div class="blue-token token" id="blue-2"></div></div>
-                        <div class="token-home"><div class="blue-token token" id="blue-3"></div></div>
-                        <div class="token-home"><div class="blue-token token" id="blue-4"></div></div>
+                        <div class="token-home" id="blue-home-1"><div class="blue-token token" id="blue-1"></div></div>
+                        <div class="token-home" id="blue-home-2"><div class="blue-token token" id="blue-2"></div></div>
+                        <div class="token-home" id="blue-home-3"><div class="blue-token token" id="blue-3"></div></div>
+                        <div class="token-home" id="blue-home-4"><div class="blue-token token" id="blue-4"></div></div>
                     </div>
                     <div class="grid1 part">
                             <div class="line">
@@ -66,10 +64,10 @@
                             </div>
                     </div>
                     <div class="red-home base">
-                        <div class="token-home"><div class="red-token token" id="red-1"></div></div>
-                        <div class="token-home"><div class="red-token token" id="red-2"></div></div>
-                        <div class="token-home"><div class="red-token token" id="red-3"></div></div>
-                        <div class="token-home"><div class="red-token token" id="red-4"></div></div>
+                        <div class="token-home" id="red-home-1"><div class="red-token token" id="red-1"></div></div>
+                        <div class="token-home" id="red-home-2"><div class="red-token token" id="red-2"></div></div>
+                        <div class="token-home" id="red-home-3"><div class="red-token token" id="red-3"></div></div>
+                        <div class="token-home" id="red-home-4"><div class="red-token token" id="red-4"></div></div>
                     </div>
                 </div>
         
@@ -136,10 +134,10 @@
         
                 <div class="board-bottom">
                     <div class="yellow-home base">
-                        <div class="token-home"><div class="yellow-token token" id="yellow-1"></div></div>
-                        <div class="token-home"><div class="yellow-token token" id="yellow-2"></div></div>
-                        <div class="token-home"><div class="yellow-token token" id="yellow-3"></div></div>
-                        <div class="token-home"><div class="yellow-token token" id="yellow-4"></div></div>
+                        <div class="token-home" id="yellow-home-1"><div class="yellow-token token" id="yellow-1"></div></div>
+                        <div class="token-home" id="yellow-home-2"><div class="yellow-token token" id="yellow-2"></div></div>
+                        <div class="token-home" id="yellow-home-3"><div class="yellow-token token" id="yellow-3"></div></div>
+                        <div class="token-home" id="yellow-home-4"><div class="yellow-token token" id="yellow-4"></div></div>
                     </div>
                     <div class="grid5 part">
                         <div class="line">
@@ -174,17 +172,48 @@
                         </div>
                     </div>
                     <div class="green-home base">
-                        <div class="token-home"><div class="green-token token" id="green-1"></div></div>
-                        <div class="token-home"><div class="green-token token" id="green-2"></div></div>
-                        <div class="token-home"><div class="green-token token" id="green-3"></div></div>
-                        <div class="token-home"><div class="green-token token" id="green-4"></div></div>
+                        <div class="token-home" id="green-home-1"><div class="green-token token" id="green-1"></div></div>
+                        <div class="token-home" id="green-home-2"><div class="green-token token" id="green-2"></div></div>
+                        <div class="token-home" id="green-home-3"><div class="green-token token" id="green-3"></div></div>
+                        <div class="token-home" id="green-home-4"><div class="green-token token" id="green-4"></div></div>
                     </div>
                 </div>
             </div>
+
+            <!-- Scores and Rolls! -->
+            <div class="userStats">
+                <div class="rollDisplay">
+                    <p>Roll:</p>
+                    <div id="updateRoll">?</div>
+                </div>
+    
+                <div class="scoreSheet">
+                        <h3>Score Board</h3>
+                        <table id="table">
+                            <tr>
+                                <th id="scoreHead">Player</th>
+                                <th id="scoreHead">Win Tokens</th>
+                            </tr>
+                            <tr>
+                                <td id="player1">Player 1</td>
+                                <td class="score" id="blue-token"></td>
+                            </tr>
+                            <tr>
+                                <td id="player2">Player 2</td>
+                                <td class="score" id="red-token"></td>
+                            </tr>
+                            <tr>
+                                <td id="player3">Player 3</td>
+                                <td class="score" id="green-token"></td>
+                            </tr>
+                            <tr>
+                                <td id="player4">Player 4</td>
+                                <td class="score" id="yellow-token"></td>
+                            </tr>
+                        </table>
+                </div>
+            </div>
         </div>
-
-
-        <footer>ⓒ 2019 Yashoma Boodhan</footer>
 
     <!--JavaScript at end of body for optimized loading-->
     <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           

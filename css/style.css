@@ -2,7 +2,7 @@ body {
     text-align: center;
 }
 
-h3 {
+h2 {
     font-weight: bold;
     margin: 0.4em;
 }
@@ -44,10 +44,9 @@ div {
     justify-content: space-around;
     align-items: space-around;
     width: 6em;
-    height: 6em;
+    height: 5.85em;
     background: transparent;
     z-index: 2;
-
 }
 
 .winningTile {
@@ -151,22 +150,74 @@ button {
     margin-bottom: 1em;
 }
 
+/* User score, roll and messages */
+
 #message {
     display: block;
-    background: #d4d3d481;
     margin: 0em 10em 0.8em 10em;
-    border: 0.05em solid transparent;
-    border-radius: 10%;
-    font-size: 0.8em;
+    font-size: 0.9em;
     padding: 1em;
 }
 
-#updateRoll {
-    margin: 0 0 0.5em 0;
+.rollDisplay {
+    margin: 0em 2em 1em 2em;
+    border-radius: 5%;
+    font-weight: bold;
 }
 
 .win {
     width: 1.3em;
     height: 1.3em;
     position: relative;
+    margin: 0.4em;
+}
+
+.score {
+    display: flex;
+}
+
+.scoreSheet {
+    border-radius: 5%;
+    margin: 0 2em 0 2em;
+    padding: 1em;
+    width: 20em;
+    border: 1px solid black;
+}
+
+#scoreHead {
+    font-size: 1.5em;
+}
+
+#player1, #player2, #player3, #player4 {
+    font-weight: bold;
+}
+
+#player1:hover {
+    color: skyblue;
+}
+
+#player2:hover {
+    color: crimson;
+}
+
+#player3:hover {
+    color: limegreen;
+}
+
+#player4:hover {
+    color: gold;
+}
+
+.userStats {
+    display: inline-block;
+    vertical-align: top;
+}
+
+p {
+    font-size: 2em;
+    margin: 0em;
+}
+
+#updateRoll {
+    font-size: 1.5em;
 }

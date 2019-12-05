@@ -13,6 +13,11 @@ let RED_END_TILE = 62
 let GREEN_END_TILE = 67
 let YELLOW_END_TILE = 72
 
+let SAFE_TILE_1 = 9
+let SAFE_TILE_2 = 22
+let SAFE_TILE_3 = 35
+let SAFE_TILE_4 = 48
+
 let COMPLETE_ROUND_TILE_COUNT = 51
 
 let moves = 0
@@ -22,7 +27,7 @@ let currentToken = []
 
 let flashInterval=[]
 
-let redTokens = [], blueTokens = [], greenTokens = [], yellowTokens = []
+let redTokens = [], blueTokens = [], greenTokens = [], yellowTokens = [], allTokens = {}
 
 let blueToken_1, blueToken_2, blueToken_3, blueToken_4
 let redToken_1, redToken_2, redToken_3, redToken_4
@@ -36,3 +41,5 @@ let isPlayerFourTurn = false
 
 let message = ''
 let currentPlayer = 'Player 1 (blue)'
+
+let testEnd = 0

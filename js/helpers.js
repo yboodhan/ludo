@@ -39,7 +39,6 @@ const addTokenHighlight = (arr) => {
     for (let i = 0; i < arr.length; i++) {
         flashInterval.push(setInterval( () => {
             $('#'+arr[i].piece.id).toggleClass('piecesInPlay')
-            console.log('flashing')
         }, 500))
     }
 }
@@ -63,7 +62,7 @@ const removeTokenHighlight = () => {
 //Determine which pieces player can move
 const currentTokens = () => {
 
-    document.getElementById('updateRoll').textContent = 'Roll: ' + moves
+    document.getElementById('updateRoll').textContent = moves
 
     if (moves == 6 || moves == 1) {
         tokensInPlay = tokens.filter ( (token) => token.totalMoves <= COMPLETE_ROUND_TILE_COUNT)
@@ -87,7 +86,7 @@ const currentTokens = () => {
 
 //Plays selected token for current player
 const moveToken = (e) => {
-    document.getElementById('updateRoll').textContent = ''
+    document.getElementById('updateRoll').textContent = '?'
 
     removeTokenHighlight()
     removeTokenListener(tokensInPlay)
@@ -96,16 +95,32 @@ const moveToken = (e) => {
     currentTokenInPlay[0].move(moves)
 
     killToken(currentTokenInPlay[0])
-    console.log(currentTokenInPlay[0].currentTile+' dsfdsfsd')
 
     endPlayerTurn()
 }
 
 // Kills token
 const killToken = (killerToken) => {
-    let endBox = $('.box[data-tile-number="'+ killerToken.currentTile +'"]')
-    console.log(endBox)
-    console.log(endBox[0].children)
+    let endBox = $('.box[data-tile-number="'+ testEnd +'"]')
+    let children = endBox[0].children
+
+    //If the end tile is not a safe zone, then check if there is a token to kill and kill it
+    if (testEnd != SAFE_TILE_1 && testEnd != SAFE_TILE_2 && testEnd != SAFE_TILE_3 && testEnd != SAFE_TILE_4) {
+        if (children && children.length == 1 && (killerToken.piece.classList[0] != children[0].classList[0])) {
+
+            //Get the token already in the box and it's properties, send it back home
+            let childId = children[0].id
+            let deadToken = allTokens[childId]
+            let home = deadToken.home
+            $('#'+childId).detach().appendTo($(home))
+    
+            //Reset the variables for the dead token
+            deadToken.inPlay = false
+            deadToken.currentTile = deadToken.startTile
+            deadToken.totalMoves = 0
+            deadToken.testMovesTotal = 0
+        }
+    }
 }
 
 //End the player's turn and go to the next player

@@ -25,3 +25,19 @@ Score Logic:
     -if killed, add 1 to kill score for player
 -token return score
     -score is equal to how many tokens are in
+
+
+-Get the ending tile right away by setting it as an aside variable and input if conditions for rollover and win
+-reset moves after kill
+-if roll a 6, doesn't recognize it's an end tile, doesn't have chidlren
+
+
+
+
+
+-test result
+-removes same color token
+-doesn't return token to home spot
+
+    //if the class of both tokens are the same, dont remove
+    //check if children is not null and length > 0
