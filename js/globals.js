@@ -43,3 +43,4 @@ let message = ''
 let currentPlayer = 'Player 1 (blue)'
 
 let testEnd = 0
+let winningBoxes = []

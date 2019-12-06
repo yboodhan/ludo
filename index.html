@@ -19,6 +19,7 @@
             <div id="controls">
                 <button class="waves-effect waves-light btn pink lighten-2" id="play">PLAY<i class="material-icons">play_circle_filled</i></button>
                 <button class="waves-effect waves-light btn purple lighten-2" id="roll">ROLL<i class="material-icons">casino</i></button>
+                <button class="waves-effect waves-light btn purple lighten-2" id="reset">RESET<i class="material-icons">replay</i></button>
             </div>
 
             <div id="message">Each player needs to roll a 1 or 6 to enter a token into the game. Click the play button to start.</div>
@@ -183,7 +184,7 @@
             <!-- Scores and Rolls! -->
             <div class="userStats">
                 <div class="rollDisplay">
-                    <p>Roll:</p>
+                    <p class="rollText">Roll:</p>
                     <div id="updateRoll">?</div>
                 </div>
     
@@ -195,19 +196,19 @@
                                 <th id="scoreHead">Win Tokens</th>
                             </tr>
                             <tr>
-                                <td id="player1">Player 1</td>
+                                <td id="player1" class="playerName">Player 1 (blue)</td>
                                 <td class="score" id="blue-token"></td>
                             </tr>
                             <tr>
-                                <td id="player2">Player 2</td>
+                                <td id="player2" class="playerName">Player 2 (red)</td>
                                 <td class="score" id="red-token"></td>
                             </tr>
                             <tr>
-                                <td id="player3">Player 3</td>
+                                <td id="player3" class="playerName">Player 3 (green)</td>
                                 <td class="score" id="green-token"></td>
                             </tr>
                             <tr>
-                                <td id="player4">Player 4</td>
+                                <td id="player4" class="playerName">Player 4 (yellow)</td>
                                 <td class="score" id="yellow-token"></td>
                             </tr>
                         </table>

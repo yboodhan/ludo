@@ -94,44 +94,90 @@ const moveToken = (e) => {
     let currentTokenInPlay = tokensInPlay.filter( (token) => token.piece == e.target)
     currentTokenInPlay[0].move(moves)
 
-    killToken(currentTokenInPlay[0])
+    // killToken(currentTokenInPlay[0])
 
     endPlayerTurn()
 }
 
 // Kills token
-const killToken = (killerToken) => {
-    let endBox = $('.box[data-tile-number="'+ testEnd +'"]')
-    let children = endBox[0].children
+// const killToken = (killerToken) => {
+//     let endBox = $('.box[data-tile-number="'+ testEnd +'"]')
+//     let children = endBox[0].children
 
-    //If the end tile is not a safe zone, then check if there is a token to kill and kill it
-    if (testEnd != SAFE_TILE_1 && testEnd != SAFE_TILE_2 && testEnd != SAFE_TILE_3 && testEnd != SAFE_TILE_4) {
-        if (children && children.length == 1 && (killerToken.piece.classList[0] != children[0].classList[0])) {
+//     //If the end tile is not a safe zone, then check if there is a token to kill and kill it
+//     if (testEnd != SAFE_TILE_1 && testEnd != SAFE_TILE_2 && testEnd != SAFE_TILE_3 && testEnd != SAFE_TILE_4) {
+//         if (children && children.length == 1 && (killerToken.piece.classList[0] != children[0].classList[0])) {
 
-            //Get the token already in the box and it's properties, send it back home
-            let childId = children[0].id
-            let deadToken = allTokens[childId]
-            let home = deadToken.home
-            $('#'+childId).detach().appendTo($(home))
+//             //Get the token already in the box and it's properties, send it back home
+//             let childId = children[0].id
+//             let deadToken = allTokens[childId]
+//             let home = deadToken.home
+//             $('#'+childId).detach().appendTo($(home))
     
-            //Reset the variables for the dead token
-            deadToken.inPlay = false
-            deadToken.currentTile = deadToken.startTile
-            deadToken.totalMoves = 0
-            deadToken.testMovesTotal = 0
+//             //Reset the variables for the dead token
+//             deadToken.inPlay = false
+//             deadToken.currentTile = deadToken.startTile
+//             deadToken.totalMoves = 0
+//             deadToken.testMovesTotal = 0
+//         }
+//     }
+// }
+
+//Reset each colored token object to default and to home position
+const tokenReturn = (arr, start) => {
+    arr.forEach( (token) => {
+        token.currentTile = start
+        token.inPlay = false
+        token.totalMoves = 0
+        token.testMovesTotal = 0
+        if (token.piece.classList.length > 2) {
+            token.piece.classList.remove('win')
         }
-    }
+        $('#'+token.piece.id).detach().appendTo($(token.home))
+    })
+}
+
+//Reset the game to beginning
+const reset = () => {
+
+    message.textContent = 'Click play to start a new game.'
+
+    currentPlayer = 'Player 1 (blue)'
+    isPlayerOneTurn = true
+    isPlayerTwoTurn = false
+    isPlayerThreeTurn = false
+    isPlayerFourTurn = false
+
+    document.getElementById('reset').style.display = 'none'
+
+    //Put play button back up
+    document.getElementById('play').style.display = 'inline-block'
+
+    //Reset all tokens and empty scoreboards
+    tokenReturn(blueTokens, BLUE_START_TILE)
+    tokenReturn(redTokens, RED_START_TILE)
+    tokenReturn(greenTokens, GREEN_START_TILE)
+    tokenReturn(yellowTokens, YELLOW_START_TILE)
+}
+
+//End the game, and allow the player to play again
+const endGame = () => {
+    document.getElementById('roll').style.display = 'none'
+    document.getElementById('reset').style.display = 'inline-block'
+
+    document.getElementById('reset').addEventListener('click', reset)
 }
 
 //Check if a player won
 const checkWin = () => {
 
     //Load all winning boxes
-    let winningBoxes = document.getElementsByClassName('score')
+    winningBoxes = document.getElementsByClassName('score')
     for (let i = 0; i < winningBoxes.length; i++) {
         if (winningBoxes[i].children.length == 1) {
-            message.textContent = document.getElementsByTagName('td')[i].innerText + ' wins!'
-            // endGame()
+            message.textContent = document.getElementsByClassName('playerName')[i].innerText + ' wins!'
+            message.style.fontSize = 'larger'
+            endGame()
         }
     }
 }
@@ -152,22 +198,22 @@ const endPlayerTurn = () => {
 //Change player turn
 const changeTurn = () => {
     if (isPlayerOneTurn) {
-        message.textContent = 'Player 2 (red), it\'s your turn!'
+        message.textContent = 'Player 2 (red), it\'s your turn! Click roll.'
         currentPlayer = 'Player 2 (red)'
         isPlayerOneTurn = false
         isPlayerTwoTurn = true
     }else if (isPlayerTwoTurn) {
-        message.textContent = 'Player 3 (green), it\'s your turn!'
+        message.textContent = 'Player 3 (green), it\'s your turn! Click roll.'
         currentPlayer = 'Player 3 (green)'
         isPlayerTwoTurn = false
         isPlayerThreeTurn = true
     }else if (isPlayerThreeTurn) {
-        message.textContent = 'Player 4 (yellow), it\'s your turn!'
+        message.textContent = 'Player 4 (yellow), it\'s your turn! Click roll.'
         currentPlayer = 'Player 4 (yellow)'
         isPlayerThreeTurn = false
         isPlayerFourTurn = true
     }else if (isPlayerFourTurn) {
-        message.textContent = 'Player 1 (blue), it\'s your turn!'
+        message.textContent = 'Player 1 (blue), it\'s your turn! Click roll.'
         currentPlayer = 'Player 1 (blue)'
         isPlayerFourTurn = false
         isPlayerOneTurn = true

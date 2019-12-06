@@ -81,7 +81,7 @@ class Token {
             this.piece.classList.add('win')
             $('#'+divId).detach().appendTo($('#'+classOfWin))
             this.inPlay = false
-            message.textContent = currentPlayer + ', got a token to the end!'
+            message.textContent = 'You got a token to the end!'
             checkWin()
         } else {
             $('#'+divId).detach().appendTo($('.box[data-tile-number="'+ this.currentTile +'"]'))

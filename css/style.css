@@ -134,6 +134,10 @@ div {
     display: none;
 }
 
+#reset {
+    display: none;
+}
+
 .piecesInPlay {
     border: 0.2em outset #f06292;
     background: #ba68c8;
@@ -155,7 +159,7 @@ button {
 #message {
     display: block;
     margin: 0em 10em 0.8em 10em;
-    font-size: 0.9em;
+    font-size: 1em;
     padding: 1em;
 }
 
@@ -192,6 +196,7 @@ button {
 
 #player1, #player2, #player3, #player4 {
     font-weight: bold;
+    font-size: 0.8em;
 }
 
 #player1:hover {
