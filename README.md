@@ -18,7 +18,7 @@ To install this game, fork this repository. Click clone and copy the HTTPS link.
 
 * Wireframes were created and used as a guide to complete HTML and CSS components for game. HTML and CSS were used to created the DOM elements for the game and to style these elements, respectively.
 
-![Slide 2](./images/wireframe.png)
+![Image description](./images/wireframe.png)
 
 * DOM manipulation and game logic were implemented simultaneously in an iterative process. HTML and CSS were revised as needed to preserve style during this process.
   * Logic for the game overall was broken down to smaller pieces (start logic, play logic, change turn logic, move logic, win logic, score logic, etc.).
