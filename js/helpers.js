@@ -175,7 +175,7 @@ const checkWin = () => {
     //Load all winning boxes
     winningBoxes = document.getElementsByClassName('score')
     for (let i = 0; i < winningBoxes.length; i++) {
-        if (winningBoxes[i].children.length == 1) {
+        if (winningBoxes[i].children.length == 4) {
             message.textContent = document.getElementsByClassName('playerName')[i].innerText + ' wins!'
             message.style.fontSize = 'larger'
             endGame()

@@ -228,3 +228,15 @@ p {
 #updateRoll {
     font-size: 1.5em;
 }
+
+/* Rules for the game */
+
+#gameRules {
+    margin-top: 6em;
+}
+
+.rulesList {
+    display: inline-block;
+    text-align: left;
+    line-height: 3em;
+}

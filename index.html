@@ -17,12 +17,13 @@
 
         <div class="playGame">
             <div id="controls">
+                <a href="#gameRules"><button class="waves-effect waves-light btn purple lighten-2" id="rules">RULES<i class="material-icons">book</i></button></a>
                 <button class="waves-effect waves-light btn pink lighten-2" id="play">PLAY<i class="material-icons">play_circle_filled</i></button>
                 <button class="waves-effect waves-light btn purple lighten-2" id="roll">ROLL<i class="material-icons">casino</i></button>
                 <button class="waves-effect waves-light btn purple lighten-2" id="reset">RESET<i class="material-icons">replay</i></button>
             </div>
 
-            <div id="message">Each player needs to roll a 1 or 6 to enter a token into the game. Click the play button to start.</div>
+            <div id="message">Each player needs to roll a 1 or 6 to enter a token into the game. Click the play button to start. Scroll down to see rules for the game.</div>
 
             <div class="board">
                 <div class="board-top">
@@ -213,6 +214,28 @@
                             </tr>
                         </table>
                 </div>
+            </div>
+        </div>
+
+        <div id="gameRules">
+            <h3>Rules of Ludo</h3>
+            <h6>There are many variations of the Ludo game but these are the rules for the above game.</h6>
+            <div class="rulesList">
+                <ul>
+                    <li>-Each player needs to roll a 1 or 6 to enter a token into the game.</li>
+                    <li>-If a player has no tokens on board and fails to roll a 1 or 6, the turn passes to the next player.</li>
+                    <li>-If a player has tokens on the board and rolls a 1 or 6, they can move a token already on the board or enter a new one.</li>
+                    <li>-Players alternate turns in a clockwise direction and select a token to move based on roll result.</li>
+                    <li>-If a player rolls a 6, they get an extra turn.</li>
+                    <li>-If a player's token lands on a tile already occupied by an opponent's token, the opponent's token is returned to it's home.</li>
+                    <li>-If a player's token lands on a tile already occupied by two tokens of an opponent, the opponent's tokens are safe.</li>
+                    <li>-All tokens on the safe tiles (marked ✪) are safe even if an opponent lands on them.</li>
+                    <li>-Tokens returned to their homes can be re-entered into the game if the player rolls a 1 or 6.</li>
+                    <li>-After a token makes it's way completely around the board (51 moves), it can enter it's colored column.</li>
+                    <li>-The colored columns can only be occupied by tokens of the same color. All tokens are safe in their colored columns.</li>
+                    <li>-Tokens in the colored columns can advance toward the center tile but can only enter the center tile on an exact roll.</li>
+                    <li>-The first player to get all four tokens to the center tile wins the game!</li>
+                </ul>
             </div>
         </div>
 
