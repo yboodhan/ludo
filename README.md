@@ -7,11 +7,11 @@ Ludo is a multi-player board game that takes a combination of luck and skill to 
 This game uses Javascript, jQuery, HTML5, and CSS3.
 
 <p align="center">
-<img src="./images/game.png" alt="a pic" width="400" height="400" />
+<img src="./images/game.png" alt="a pic" width="500" height="400" />
  </p>
 
 <p align="center">
-<img src="./images/win.png" alt="a pic" width="400" height="400" />
+<img src="./images/win.png" alt="a pic" width="500" height="400" />
  </p>
 
 #### Accessing the game:
