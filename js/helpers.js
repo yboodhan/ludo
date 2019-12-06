@@ -123,8 +123,22 @@ const killToken = (killerToken) => {
     }
 }
 
+//Check if a player won
+const checkWin = () => {
+
+    //Load all winning boxes
+    let winningBoxes = document.getElementsByClassName('score')
+    for (let i = 0; i < winningBoxes.length; i++) {
+        if (winningBoxes[i].children.length == 1) {
+            message.textContent = document.getElementsByTagName('td')[i].innerText + ' wins!'
+            // endGame()
+        }
+    }
+}
+
 //End the player's turn and go to the next player
 const endPlayerTurn = () => {
+
     if (moves != 6) {
         changeTurn()
     } else {

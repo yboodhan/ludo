@@ -77,9 +77,12 @@ class Token {
 
         //If token reaches winning tile, put it in the center box and set win, if not, play normal
         if (this.currentTile == (this.endTile + 1)) {
-            console.log('you win!')
-            $('#'+divId).detach().appendTo($('.triangles'))
+            let classOfWin = this.piece.classList[0]
+            this.piece.classList.add('win')
+            $('#'+divId).detach().appendTo($('#'+classOfWin))
             this.inPlay = false
+            message.textContent = currentPlayer + ', got a token to the end!'
+            checkWin()
         } else {
             $('#'+divId).detach().appendTo($('.box[data-tile-number="'+ this.currentTile +'"]'))
         }

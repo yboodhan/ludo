@@ -163,13 +163,15 @@ button {
     margin: 0em 2em 1em 2em;
     border-radius: 5%;
     font-weight: bold;
+    border: 1px solid rgba(233, 143, 206, 0.356);
+    background: rgba(243, 124, 180, 0.356);
 }
 
 .win {
     width: 1.3em;
     height: 1.3em;
     position: relative;
-    margin: 0.4em;
+    margin: 0em 0.4em 0em 0em;
 }
 
 .score {

@@ -41,3 +41,11 @@ Score Logic:
 
     //if the class of both tokens are the same, dont remove
     //check if children is not null and length > 0
+
+
+
+NEED TO DO:
+-win logic, win in scoreboard
+-win message
+-stop game
+-reset game
