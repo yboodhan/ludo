@@ -16,6 +16,8 @@ To install this game, fork this repository. Click clone and copy the HTTPS link.
 
 ## Approach
 
+A combination of making notes by hand, using comments throughout the process, using a ToDo file, and using Trello was implemented in order to track workflow and tasks.
+
 * Wireframes were created and used as a guide to complete HTML and CSS components for game. HTML and CSS were used to created the DOM elements for the game and to style these elements, respectively.
 
 ![picture](./images/wireframe.png)
