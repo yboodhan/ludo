@@ -21,7 +21,7 @@ A combination of making notes by hand, using comments throughout the process, us
 * Wireframes were created and used as a guide to complete HTML and CSS components for game. HTML and CSS were used to created the DOM elements for the game and to style these elements, respectively.
 
 <p align="center">
-<img src="./images/wireframe.png" alt="a pic" width="500" height="500" />
+<img src="./images/wireframe.png" alt="a pic" width="400" height="400" />
  </p>
 
 * DOM manipulation and game logic were implemented simultaneously in an iterative process. HTML and CSS were revised as needed to preserve style during this process.
