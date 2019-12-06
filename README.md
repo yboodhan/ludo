@@ -39,6 +39,8 @@ A combination of making notes by hand, using comments throughout the process, us
 
 ## Further Goals
 
+In order to get the desired stepping effect, I used a stepTimeout. However, since JS is asynchronous, this created some obstacles and bugs. Some functions would run and use variables that haven't been updated yet. To work around this issue, test functions were created to feed the true value for the location of the tokens to the necessary functions. A resulting bug is that when removing an opponent token, the opponent token is removed before the player gets to the tile. The game works as intended and removes tokens correctly but the effect is weird and does not offer the best user experience.
+
 This ludo game is fully functional and can be reset using the RESET button in the game. Still, this game can be improved by allowing a two-player mode and a player vs. AI mode. In addition, additional features like allowing the user to input player names and music or sounds can add to the appeal of the game. If given more time, these features would have been incorporated.
 
 
