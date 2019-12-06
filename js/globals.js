@@ -19,13 +19,13 @@ let SAFE_TILE_3 = 35
 let SAFE_TILE_4 = 48
 
 let COMPLETE_ROUND_TILE_COUNT = 51
+let TILE_BEFORE_ROLLEROVER = 52
 
 let moves = 0
-let tokens = []
-let tokensInPlay = []
-let currentToken = []
-
-let flashInterval=[]
+let testEnd = 0
+let tokens = [], tokensInPlay = [], currentToken = []
+let winningBoxes = []
+let flashInterval = []
 
 let redTokens = [], blueTokens = [], greenTokens = [], yellowTokens = [], allTokens = {}
 
@@ -41,6 +41,3 @@ let isPlayerFourTurn = false
 
 let message = ''
 let currentPlayer = 'Player 1 (blue)'
-
-let testEnd = 0
-let winningBoxes = []

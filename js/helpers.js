@@ -94,34 +94,34 @@ const moveToken = (e) => {
     let currentTokenInPlay = tokensInPlay.filter( (token) => token.piece == e.target)
     currentTokenInPlay[0].move(moves)
 
-    // killToken(currentTokenInPlay[0])
+    killToken(currentTokenInPlay[0])
 
     endPlayerTurn()
 }
 
 // Kills token
-// const killToken = (killerToken) => {
-//     let endBox = $('.box[data-tile-number="'+ testEnd +'"]')
-//     let children = endBox[0].children
+const killToken = (killerToken) => {
+    let endBox = $('.box[data-tile-number="'+ testEnd +'"]')
+    let children = endBox[0].children
 
-//     //If the end tile is not a safe zone, then check if there is a token to kill and kill it
-//     if (testEnd != SAFE_TILE_1 && testEnd != SAFE_TILE_2 && testEnd != SAFE_TILE_3 && testEnd != SAFE_TILE_4) {
-//         if (children && children.length == 1 && (killerToken.piece.classList[0] != children[0].classList[0])) {
+    //If the end tile is not a safe zone, then check if there is a token to kill and kill it
+    if (testEnd != SAFE_TILE_1 && testEnd != SAFE_TILE_2 && testEnd != SAFE_TILE_3 && testEnd != SAFE_TILE_4) {
+        if (children && children.length == 1 && (killerToken.piece.classList[0] != children[0].classList[0])) {
 
-//             //Get the token already in the box and it's properties, send it back home
-//             let childId = children[0].id
-//             let deadToken = allTokens[childId]
-//             let home = deadToken.home
-//             $('#'+childId).detach().appendTo($(home))
+            //Get the token already in the box and it's properties, send it back home
+            let childId = children[0].id
+            let deadToken = allTokens[childId]
+            let home = deadToken.home
+            $('#'+childId).detach().appendTo($(home))
     
-//             //Reset the variables for the dead token
-//             deadToken.inPlay = false
-//             deadToken.currentTile = deadToken.startTile
-//             deadToken.totalMoves = 0
-//             deadToken.testMovesTotal = 0
-//         }
-//     }
-// }
+            //Reset the variables for the dead token
+            deadToken.inPlay = false
+            deadToken.currentTile = deadToken.startTile
+            deadToken.totalMoves = 0
+            deadToken.testMovesTotal = 0
+        }
+    }
+}
 
 //Reset each colored token object to default and to home position
 const tokenReturn = (arr, start) => {
@@ -140,6 +140,7 @@ const tokenReturn = (arr, start) => {
 //Reset the game to beginning
 const reset = () => {
 
+    message.style.fontSize = 'smaller'
     message.textContent = 'Click play to start a new game.'
 
     currentPlayer = 'Player 1 (blue)'

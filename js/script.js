@@ -4,7 +4,6 @@ window.addEventListener('DOMContentLoaded', () => {
     //On play, make roll button appear
     document.getElementById('play').addEventListener('click', () => {
         isPlayerOneTurn = true
-        console.log('play')
         document.getElementById('message').textContent = 'Player 1 (blue), click roll to begin.'
         document.getElementById('play').style.display = 'none'
         document.getElementById('roll').style.display = 'inline-block'

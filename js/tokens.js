@@ -66,12 +66,12 @@ class Token {
         }
 
         //If the token hasn't made a full round, do not allow it into a color zone
-        if (this.currentTile > 52 && this.totalMoves <= 51) {
+        if (this.currentTile > TILE_BEFORE_ROLLEROVER && this.totalMoves <= COMPLETE_ROUND_TILE_COUNT) {
             this.currentTile = 1
         }
 
         //If token moved 51 places, it can now enter it's colored zone
-        if (this.totalMoves == 52) {
+        if (this.totalMoves == TILE_BEFORE_ROLLEROVER) {
             this.currentTile = this.zoneTile
         }
 
@@ -92,7 +92,6 @@ class Token {
         //Needs same conditions that the loop runs, only faster, without 200ms delay per step
         //Need new variables that are not a part of the timed loop
         this.testMovesTotal += steps
-        console.log('total moves for this token is', this.testMovesTotal)
 
         if (this.totalMoves == 0) {
             testEnd = this.currentTile + steps - 1
@@ -100,15 +99,14 @@ class Token {
 
             testEnd = this.currentTile + steps
 
-            if ((this.currentTile + steps) > 52 && this.testMovesTotal <= 51) {
-                testEnd = (this.currentTile + steps) - 52
+            if ((this.currentTile + steps) > TILE_BEFORE_ROLLEROVER && this.testMovesTotal <= COMPLETE_ROUND_TILE_COUNT) {
+                testEnd = (this.currentTile + steps) - TILE_BEFORE_ROLLEROVER
             }
 
-            if (this.testMovesTotal >= 52) {
+            if (this.testMovesTotal >= TILE_BEFORE_ROLLEROVER) {
                 testEnd = this.zoneTile
             }
         }
-        console.log('this token will land on', testEnd)
 
         this.inPlay = true
         for (let i = 1; i <= steps; i++) {
