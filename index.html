@@ -16,245 +16,329 @@
     />
 
     <meta property='og:site_name' content='Ludo!'/>
-    <meta property='og:image' content='%PUBLIC_URL%/ludo_thumbnail.png'/>
+    <meta property='og:image' content='./ludo_thumbnail.png'/>
     <meta property='og:description' content='Battle your friends in a digital version of the traditional strategy board-game.'/>
     <meta property='og:url' content='https://yboodhan.com/ludo/' />
     <meta property='og:type' content='game'/>
 
-    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon-16x16.png">
-    <link rel="manifest" href="%PUBLIC_URL%/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./site.webmanifest">
 
     <title>Ludo!</title>
 </head>
-<body>
+<body class="container center-align">
+    <div id="landing">
 
-        <h2>LUDO!</h2>
+        <div class="heading row valign-wrapper">
+            <div class="col s3">
+                <img class="responsive-img" src="./favicon-32x32.png" alt="three-dimensional die"/>
+            </div>
+            <div class="col s6">
+                <h2>LUDO!</h2>
+            </div>
+            <div class="col s3">
+                <img class="responsive-img" src="./favicon-32x32.png" alt="three-dimensional die"/>
+            </div>
+        </div>
 
         <div class="playGame">
-            <div id="controls">
-                <a href="#gameRules"><button class="waves-effect waves-light btn purple lighten-2" id="rules">RULES<i class="material-icons">book</i></button></a>
-                <button class="waves-effect waves-light btn pink lighten-2" id="play">PLAY<i class="material-icons">play_circle_filled</i></button>
-                <button class="waves-effect waves-light btn purple lighten-2" id="roll">ROLL<i class="material-icons">casino</i></button>
-                <button class="waves-effect waves-light btn purple lighten-2" id="reset">RESET<i class="material-icons">replay</i></button>
-            </div>
 
-            <div id="message">Each player needs to roll a 1 or 6 to enter a token into the game. Click the play button to start. Scroll down to see rules for the game.</div>
-
-            <div class="board">
-                <div class="board-top">
-                    <div class="blue-home base">
-                        <div class="token-home" id="blue-home-1"><div class="blue-token token" id="blue-1"></div></div>
-                        <div class="token-home" id="blue-home-2"><div class="blue-token token" id="blue-2"></div></div>
-                        <div class="token-home" id="blue-home-3"><div class="blue-token token" id="blue-3"></div></div>
-                        <div class="token-home" id="blue-home-4"><div class="blue-token token" id="blue-4"></div></div>
+            <div id="error" class="row valign-wrapper show-on-small container" style="display:none;">
+                <div class="col s12 center-align">
+                    <div>
+                        <i class="material-icons red-text text-lighten-1">error</i>
                     </div>
-                    <div class="grid1 part">
-                            <div class="line">
-                                <div class="box" data-tile-number="11">11</div>
-                                <div class="box" data-tile-number="12"></div>
-                                <div class="box" data-tile-number="13">13</div>
-                            </div>
-                            <div class="line">
-                                <div class="box" data-tile-number="10"></div>
-                                <div class="box red-box" data-tile-number="58">58</div>
-                                <div class="box red-box" data-tile-number="14">⬇</div>
-                            </div>
-                            <div class="line">
-                                <div class="box" data-tile-number="9">✪</div>
-                                <div class="box red-box" data-tile-number="59"></div>
-                                <div class="box" data-tile-number="15"></div>
-                            </div>
-                            <div class="line">
-                                <div class="box" data-tile-number="8"></div>
-                                <div class="box red-box" data-tile-number="60"></div>
-                                <div class="box" data-tile-number="16"></div>
-                            </div>
-                            <div class="line">
-                                <div class="box" data-tile-number="7"></div>
-                                <div class="box red-box" data-tile-number="61"></div>
-                                <div class="box" data-tile-number="17"></div>
-                            </div>
-                            <div class="line">
-                                <div class="box" data-tile-number="6">6</div>
-                                <div class="box red-box" data-tile-number="62">62</div>
-                                <div class="box" data-tile-number="18">18</div>
-                            </div>
-                    </div>
-                    <div class="red-home base">
-                        <div class="token-home" id="red-home-1"><div class="red-token token" id="red-1"></div></div>
-                        <div class="token-home" id="red-home-2"><div class="red-token token" id="red-2"></div></div>
-                        <div class="token-home" id="red-home-3"><div class="red-token token" id="red-3"></div></div>
-                        <div class="token-home" id="red-home-4"><div class="red-token token" id="red-4"></div></div>
-                    </div>
-                </div>
-        
-                
-                <span class="board-middle">
-                    <div class="grid2 part">
-                        <div class="line">
-                            <div class="box" data-tile-number="52">52</div>
-                            <div class="box blue-box" data-tile-number="1">➡</div>
-                            <div class="box" data-tile-number="2"></div>
-                            <div class="box" data-tile-number="3"></div>
-                            <div class="box" data-tile-number="4"></div>
-                            <div class="box" data-tile-number="5">5</div>
-                        </div>
-                        <div class="line">
-                            <div class="box" data-tile-number="51"></div>
-                            <div class="box blue-box" data-tile-number="53">53</div>
-                            <div class="box blue-box" data-tile-number="54"></div>
-                            <div class="box blue-box" data-tile-number="55"></div>
-                            <div class="box blue-box" data-tile-number="56"></div>
-                            <div class="box blue-box" data-tile-number="57">57</div>
-                        </div>
-                        <div class="line">
-                            <div class="box" data-tile-number="50">50</div>
-                            <div class="box" data-tile-number="49"></div>
-                            <div class="box" data-tile-number="48">✪</div>
-                            <div class="box" data-tile-number="47"></div>
-                            <div class="box" data-tile-number="46"></div>
-                            <div class="box" data-tile-number="45">45</div>
-                        </div>
-                    </div>
-                    <div class="grid3">
-                        <div class="triangles">
-                                <div class="winningTile"></div>
-                        </div>
-                    </div>
-                    <div class="grid4 part">
-                        <div class="line">
-                            <div class="box" data-tile-number="19">19</div>
-                            <div class="box" data-tile-number="20"></div>
-                            <div class="box" data-tile-number="21"></div>
-                            <div class="box" data-tile-number="22">✪</div>
-                            <div class="box" data-tile-number="23"></div>
-                            <div class="box" data-tile-number="24">24</div>
-                        </div>
-                        <div class="line">
-                            <div class="box green-box" data-tile-number="67">67</div>
-                            <div class="box green-box" data-tile-number="66"></div>
-                            <div class="box green-box" data-tile-number="65"></div>
-                            <div class="box green-box" data-tile-number="64"></div>
-                            <div class="box green-box" data-tile-number="63">63</div>
-                            <div class="box" data-tile-number="25"></div>
-                        </div>
-                        <div class="line">
-                            <div class="box" data-tile-number="31">31</div>
-                            <div class="box" data-tile-number="30"></div>
-                            <div class="box" data-tile-number="29"></div>
-                            <div class="box" data-tile-number="28"></div>
-                            <div class="box green-box" data-tile-number="27">⬅</div>
-                            <div class="box" data-tile-number="26">26</div>
-                        </div>
-                    </div>
-                </span>
-        
-                <div class="board-bottom">
-                    <div class="yellow-home base">
-                        <div class="token-home" id="yellow-home-1"><div class="yellow-token token" id="yellow-1"></div></div>
-                        <div class="token-home" id="yellow-home-2"><div class="yellow-token token" id="yellow-2"></div></div>
-                        <div class="token-home" id="yellow-home-3"><div class="yellow-token token" id="yellow-3"></div></div>
-                        <div class="token-home" id="yellow-home-4"><div class="yellow-token token" id="yellow-4"></div></div>
-                    </div>
-                    <div class="grid5 part">
-                        <div class="line">
-                            <div class="box" data-tile-number="44">44</div>
-                            <div class="box yellow-box" data-tile-number="72">72</div>
-                            <div class="box" data-tile-number="32">32</div>
-                        </div>
-                        <div class="line">
-                            <div class="box" data-tile-number="43"></div>
-                            <div class="box yellow-box" data-tile-number="71"></div>
-                            <div class="box" data-tile-number="33"></div>
-                        </div>
-                        <div class="line">
-                            <div class="box" data-tile-number="42"></div>
-                            <div class="box yellow-box" data-tile-number="70"></div>
-                            <div class="box" data-tile-number="34"></div>
-                        </div>
-                        <div class="line">
-                            <div class="box" data-tile-number="41"></div>
-                            <div class="box yellow-box" data-tile-number="69"></div>
-                            <div class="box" data-tile-number="35">✪</div>
-                        </div>
-                        <div class="line">
-                            <div class="box yellow-box" data-tile-number="40">⬆</div>
-                            <div class="box yellow-box" data-tile-number="68">68</div>
-                            <div class="box" data-tile-number="36"></div>
-                        </div>
-                        <div class="line">
-                            <div class="box" data-tile-number="39">39</div>
-                            <div class="box" data-tile-number="38"></div>
-                            <div class="box" data-tile-number="37">37</div>
-                        </div>
-                    </div>
-                    <div class="green-home base">
-                        <div class="token-home" id="green-home-1"><div class="green-token token" id="green-1"></div></div>
-                        <div class="token-home" id="green-home-2"><div class="green-token token" id="green-2"></div></div>
-                        <div class="token-home" id="green-home-3"><div class="green-token token" id="green-3"></div></div>
-                        <div class="token-home" id="green-home-4"><div class="green-token token" id="green-4"></div></div>
-                    </div>
+                    <small class="red-text">Oops. It seems like your screen is too small to display the gameboard.</small>
+                    <small class="red-text">To play this game, use a tablet, laptop, or desktop computer.</small>
                 </div>
             </div>
 
-            <!-- Scores and Rolls! -->
-            <div class="userStats">
-                <div class="rollDisplay">
-                    <p class="rollText">Roll:</p>
-                    <div id="updateRoll">?</div>
+            <div class="row show-on-medium-and-up" style="display:none;">
+                <div id="controls" class="col s12">
+                        <a href="#gameRules"><button class="waves-effect waves-light btn purple lighten-2" id="rules">RULES<i class="material-icons">book</i></button></a>
+                        <button class="waves-effect waves-light btn pink lighten-2" id="play">PLAY<i class="material-icons">play_circle_filled</i></button>
+                        <button class="waves-effect waves-light btn purple lighten-2" id="roll">ROLL<i class="material-icons">casino</i></button>
+                        <button class="waves-effect waves-light btn purple lighten-2" id="reset">RESET<i class="material-icons">replay</i></button>
                 </div>
-    
-                <div class="scoreSheet">
-                        <h3>Score Board</h3>
-                        <table id="table">
-                            <tr>
-                                <th id="scoreHead">Player</th>
-                                <th id="scoreHead">Win Tokens</th>
-                            </tr>
-                            <tr>
-                                <td id="player1" class="playerName">Player 1 (blue)</td>
-                                <td class="score" id="blue-token"></td>
-                            </tr>
-                            <tr>
-                                <td id="player2" class="playerName">Player 2 (red)</td>
-                                <td class="score" id="red-token"></td>
-                            </tr>
-                            <tr>
-                                <td id="player3" class="playerName">Player 3 (green)</td>
-                                <td class="score" id="green-token"></td>
-                            </tr>
-                            <tr>
-                                <td id="player4" class="playerName">Player 4 (yellow)</td>
-                                <td class="score" id="yellow-token"></td>
-                            </tr>
-                        </table>
+            </div>
+            
+            <div id="controls" class="row show-on-medium-and-up" style="display:none;">
+                <div class="col s8 offset-s2">
+                    <div id="message">Each player needs to roll a 1 or 6 to enter a token into the game. Click the play button to start. Scroll down to see rules for the game.</div>
+                </div>
+            </div>
+
+
+            <div class="row valign-wrapper show-on-medium-and-up" style="display:none;">
+                <div class="board container col">
+                    <div class="board-top">
+                        <div class="blue-home base">
+                            <div class="token-home" id="blue-home-1"><div class="blue-token token" id="blue-1"></div></div>
+                            <div class="token-home" id="blue-home-2"><div class="blue-token token" id="blue-2"></div></div>
+                            <div class="token-home" id="blue-home-3"><div class="blue-token token" id="blue-3"></div></div>
+                            <div class="token-home" id="blue-home-4"><div class="blue-token token" id="blue-4"></div></div>
+                        </div>
+                        <div class="grid1 part">
+                                <div class="line">
+                                    <div class="box" data-tile-number="11">11</div>
+                                    <div class="box" data-tile-number="12"></div>
+                                    <div class="box" data-tile-number="13">13</div>
+                                </div>
+                                <div class="line">
+                                    <div class="box" data-tile-number="10"></div>
+                                    <div class="box red-box" data-tile-number="58">58</div>
+                                    <div class="box red-box" data-tile-number="14">⬇</div>
+                                </div>
+                                <div class="line">
+                                    <div class="box" data-tile-number="9">✪</div>
+                                    <div class="box red-box" data-tile-number="59"></div>
+                                    <div class="box" data-tile-number="15"></div>
+                                </div>
+                                <div class="line">
+                                    <div class="box" data-tile-number="8"></div>
+                                    <div class="box red-box" data-tile-number="60"></div>
+                                    <div class="box" data-tile-number="16"></div>
+                                </div>
+                                <div class="line">
+                                    <div class="box" data-tile-number="7"></div>
+                                    <div class="box red-box" data-tile-number="61"></div>
+                                    <div class="box" data-tile-number="17"></div>
+                                </div>
+                                <div class="line">
+                                    <div class="box" data-tile-number="6">6</div>
+                                    <div class="box red-box" data-tile-number="62">62</div>
+                                    <div class="box" data-tile-number="18">18</div>
+                                </div>
+                        </div>
+                        <div class="red-home base">
+                            <div class="token-home" id="red-home-1"><div class="red-token token" id="red-1"></div></div>
+                            <div class="token-home" id="red-home-2"><div class="red-token token" id="red-2"></div></div>
+                            <div class="token-home" id="red-home-3"><div class="red-token token" id="red-3"></div></div>
+                            <div class="token-home" id="red-home-4"><div class="red-token token" id="red-4"></div></div>
+                        </div>
+                    </div>
+                    
+                    <span class="board-middle">
+                        <div class="grid2 part">
+                            <div class="line">
+                                <div class="box" data-tile-number="52">52</div>
+                                <div class="box blue-box" data-tile-number="1">➡</div>
+                                <div class="box" data-tile-number="2"></div>
+                                <div class="box" data-tile-number="3"></div>
+                                <div class="box" data-tile-number="4"></div>
+                                <div class="box" data-tile-number="5">5</div>
+                            </div>
+                            <div class="line">
+                                <div class="box" data-tile-number="51"></div>
+                                <div class="box blue-box" data-tile-number="53">53</div>
+                                <div class="box blue-box" data-tile-number="54"></div>
+                                <div class="box blue-box" data-tile-number="55"></div>
+                                <div class="box blue-box" data-tile-number="56"></div>
+                                <div class="box blue-box" data-tile-number="57">57</div>
+                            </div>
+                            <div class="line">
+                                <div class="box" data-tile-number="50">50</div>
+                                <div class="box" data-tile-number="49"></div>
+                                <div class="box" data-tile-number="48">✪</div>
+                                <div class="box" data-tile-number="47"></div>
+                                <div class="box" data-tile-number="46"></div>
+                                <div class="box" data-tile-number="45">45</div>
+                            </div>
+                        </div>
+                        <div class="grid3">
+                            <div class="triangles">
+                                    <div class="winningTile"></div>
+                            </div>
+                        </div>
+                        <div class="grid4 part">
+                            <div class="line">
+                                <div class="box" data-tile-number="19">19</div>
+                                <div class="box" data-tile-number="20"></div>
+                                <div class="box" data-tile-number="21"></div>
+                                <div class="box" data-tile-number="22">✪</div>
+                                <div class="box" data-tile-number="23"></div>
+                                <div class="box" data-tile-number="24">24</div>
+                            </div>
+                            <div class="line">
+                                <div class="box green-box" data-tile-number="67">67</div>
+                                <div class="box green-box" data-tile-number="66"></div>
+                                <div class="box green-box" data-tile-number="65"></div>
+                                <div class="box green-box" data-tile-number="64"></div>
+                                <div class="box green-box" data-tile-number="63">63</div>
+                                <div class="box" data-tile-number="25"></div>
+                            </div>
+                            <div class="line">
+                                <div class="box" data-tile-number="31">31</div>
+                                <div class="box" data-tile-number="30"></div>
+                                <div class="box" data-tile-number="29"></div>
+                                <div class="box" data-tile-number="28"></div>
+                                <div class="box green-box" data-tile-number="27">⬅</div>
+                                <div class="box" data-tile-number="26">26</div>
+                            </div>
+                        </div>
+                    </span>
+            
+                    <div class="board-bottom">
+                        <div class="yellow-home base">
+                            <div class="token-home" id="yellow-home-1"><div class="yellow-token token" id="yellow-1"></div></div>
+                            <div class="token-home" id="yellow-home-2"><div class="yellow-token token" id="yellow-2"></div></div>
+                            <div class="token-home" id="yellow-home-3"><div class="yellow-token token" id="yellow-3"></div></div>
+                            <div class="token-home" id="yellow-home-4"><div class="yellow-token token" id="yellow-4"></div></div>
+                        </div>
+                        <div class="grid5 part">
+                            <div class="line">
+                                <div class="box" data-tile-number="44">44</div>
+                                <div class="box yellow-box" data-tile-number="72">72</div>
+                                <div class="box" data-tile-number="32">32</div>
+                            </div>
+                            <div class="line">
+                                <div class="box" data-tile-number="43"></div>
+                                <div class="box yellow-box" data-tile-number="71"></div>
+                                <div class="box" data-tile-number="33"></div>
+                            </div>
+                            <div class="line">
+                                <div class="box" data-tile-number="42"></div>
+                                <div class="box yellow-box" data-tile-number="70"></div>
+                                <div class="box" data-tile-number="34"></div>
+                            </div>
+                            <div class="line">
+                                <div class="box" data-tile-number="41"></div>
+                                <div class="box yellow-box" data-tile-number="69"></div>
+                                <div class="box" data-tile-number="35">✪</div>
+                            </div>
+                            <div class="line">
+                                <div class="box yellow-box" data-tile-number="40">⬆</div>
+                                <div class="box yellow-box" data-tile-number="68">68</div>
+                                <div class="box" data-tile-number="36"></div>
+                            </div>
+                            <div class="line">
+                                <div class="box" data-tile-number="39">39</div>
+                                <div class="box" data-tile-number="38"></div>
+                                <div class="box" data-tile-number="37">37</div>
+                            </div>
+                        </div>
+                        <div class="green-home base">
+                            <div class="token-home" id="green-home-1"><div class="green-token token" id="green-1"></div></div>
+                            <div class="token-home" id="green-home-2"><div class="green-token token" id="green-2"></div></div>
+                            <div class="token-home" id="green-home-3"><div class="green-token token" id="green-3"></div></div>
+                            <div class="token-home" id="green-home-4"><div class="green-token token" id="green-4"></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Scores and Rolls! -->
+                <div class="userStats col show-on-large" style="display:none;">
+                    <div class="rollDisplay">
+                        <p class="rollText">Roll:</p>
+                        <div id="updateRoll">?</div>
+                    </div>
+        
+                    <div class="scoreSheet">
+                            <h2>Score Board</h2>
+                            <table id="table">
+                                <tr>
+                                    <th id="scoreHead">Player</th>
+                                    <th id="scoreHead">Win Tokens</th>
+                                </tr>
+                                <tr>
+                                    <td id="player1" class="playerName">Player 1 (blue)</td>
+                                    <td class="score" id="blue-token"></td>
+                                </tr>
+                                <tr>
+                                    <td id="player2" class="playerName">Player 2 (red)</td>
+                                    <td class="score" id="red-token"></td>
+                                </tr>
+                                <tr>
+                                    <td id="player3" class="playerName">Player 3 (green)</td>
+                                    <td class="score" id="green-token"></td>
+                                </tr>
+                                <tr>
+                                    <td id="player4" class="playerName">Player 4 (yellow)</td>
+                                    <td class="score" id="yellow-token"></td>
+                                </tr>
+                            </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row show-on-medium-and-down" style="display:none;">
+                <div class="userStats col s10">
+                    <div class="rollDisplay">
+                        <p class="rollText">Roll:</p>
+                        <div id="updateRoll">?</div>
+                    </div>
+        
+                    <div class="scoreSheet">
+                            <h2>Score Board</h2>
+                            <table id="table">
+                                <tr>
+                                    <th id="scoreHead">Player</th>
+                                    <th id="scoreHead">Win Tokens</th>
+                                </tr>
+                                <tr>
+                                    <td id="player1" class="playerName">Player 1 (blue)</td>
+                                    <td class="score" id="blue-token"></td>
+                                </tr>
+                                <tr>
+                                    <td id="player2" class="playerName">Player 2 (red)</td>
+                                    <td class="score" id="red-token"></td>
+                                </tr>
+                                <tr>
+                                    <td id="player3" class="playerName">Player 3 (green)</td>
+                                    <td class="score" id="green-token"></td>
+                                </tr>
+                                <tr>
+                                    <td id="player4" class="playerName">Player 4 (yellow)</td>
+                                    <td class="score" id="yellow-token"></td>
+                                </tr>
+                            </table>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div id="gameRules" class="row">
+        <div class="col s12">
+            <div class="row valign-wrapper">
+                <div class="col s3">
+                    <img class="responsive-img" src="./favicon-32x32.png" alt="three-dimensional die"/>
+                </div>
+                <div class="col s6">
+                    <h2>Rules of Ludo</h2>
+                </div>
+                <div class="col s3">
+                    <img class="responsive-img" src="./favicon-32x32.png" alt="three-dimensional die"/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <small>There are many variations of the Ludo game but these are the rules for the above game.</small>
+                    <div class="rulesList">
+                        <ul>
+                            <li class="valign-wrapper"><i class="tiny material-icons pink-text text-lighten-1 show-on-large" style="display:none;">casino</i>-  Each player needs to roll a 1 or 6 to enter a token into the game.</li> </br>
+                            <li class="valign-wrapper"><i class="tiny material-icons blue-text text-lighten-1 show-on-large" style="display:none;">casino</i>-  If a player has no tokens on board and fails to roll a 1 or 6, the turn passes to the next player.</li> </br>
+                            <li class="valign-wrapper"><i class="tiny material-icons green-text text-lighten-1 show-on-large" style="display:none;">casino</i>-  If a player has tokens on the board and rolls a 1 or 6, they can move a token already on the board or enter a new one.</li> </br>
+                            <li class="valign-wrapper"><i class="tiny material-icons red-text text-lighten-1 show-on-large" style="display:none;">casino</i>-  Players alternate turns in a clockwise direction and select a token to move based on roll result.</li> </br>
+                            <li class="valign-wrapper"><i class="tiny material-icons orange-text text-lighten-1 show-on-large" style="display:none;">casino</i>-  If a player rolls a 6, they get an extra turn.</li> </br>
+                            <li class="valign-wrapper"><i class="tiny material-icons purple-text text-lighten-1 show-on-large" style="display:none;">casino</i>-  If a player's token lands on a tile already occupied by an opponent's token, the opponent's token is returned to it's home.</li> </br>
+                            <li class="valign-wrapper"><i class="tiny material-icons yellow-text text-lighten-1 show-on-large" style="display:none;">casino</i>-  If a player's token lands on a tile already occupied by two tokens of an opponent, the opponent's tokens are safe.</li> </br>
+                            <li class="valign-wrapper"><i class="tiny material-icons grey-text text-lighten-1 show-on-large" style="display:none;">casino</i>-  All tokens on the safe tiles (marked ✪) are safe even if an opponent lands on them.</li> </br>
+                            <li class="valign-wrapper"><i class="tiny material-icons teal-text text-lighten-1 show-on-large" style="display:none;">casino</i>-  Tokens returned to their homes can be re-entered into the game if the player rolls a 1 or 6.</li> </br>
+                            <li class="valign-wrapper"><i class="tiny material-icons amber-text text-lighten-1 show-on-large" style="display:none;">casino</i>-  After a token makes it's way completely around the board (51 moves), it can enter it's colored column.</li> </br>
+                            <li class="valign-wrapper"><i class="tiny material-icons cyan-text text-lighten-1 show-on-large" style="display:none;">casino</i>-  The colored columns can only be occupied by tokens of the same color. All tokens are safe in their colored columns.</li> </br>
+                            <li class="valign-wrapper"><i class="tiny material-icons lime-text text-lighten-1 show-on-large" style="display:none;">casino</i>-  Tokens in the colored columns can advance toward the center tile but can only enter the center tile on an exact roll.</li> </br>
+                            <li class="valign-wrapper"><i class="tiny material-icons indigo-text text-lighten-1 show-on-large" style="display:none;">casino</i>-  The first player to get all four tokens to the center tile wins the game!</li> </br>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <div id="gameRules">
-            <h3>Rules of Ludo</h3>
-            <h6>There are many variations of the Ludo game but these are the rules for the above game.</h6>
-            <div class="rulesList">
-                <ul>
-                    <li>-Each player needs to roll a 1 or 6 to enter a token into the game.</li>
-                    <li>-If a player has no tokens on board and fails to roll a 1 or 6, the turn passes to the next player.</li>
-                    <li>-If a player has tokens on the board and rolls a 1 or 6, they can move a token already on the board or enter a new one.</li>
-                    <li>-Players alternate turns in a clockwise direction and select a token to move based on roll result.</li>
-                    <li>-If a player rolls a 6, they get an extra turn.</li>
-                    <li>-If a player's token lands on a tile already occupied by an opponent's token, the opponent's token is returned to it's home.</li>
-                    <li>-If a player's token lands on a tile already occupied by two tokens of an opponent, the opponent's tokens are safe.</li>
-                    <li>-All tokens on the safe tiles (marked ✪) are safe even if an opponent lands on them.</li>
-                    <li>-Tokens returned to their homes can be re-entered into the game if the player rolls a 1 or 6.</li>
-                    <li>-After a token makes it's way completely around the board (51 moves), it can enter it's colored column.</li>
-                    <li>-The colored columns can only be occupied by tokens of the same color. All tokens are safe in their colored columns.</li>
-                    <li>-Tokens in the colored columns can advance toward the center tile but can only enter the center tile on an exact roll.</li>
-                    <li>-The first player to get all four tokens to the center tile wins the game!</li>
-                </ul>
-            </div>
-        </div>
+    </div>
 
     <!--JavaScript at end of body for optimized loading-->
     <script type = "text/javascript" src = "https://code.jquery.com/jquery-2.1.1.min.js"></script>           

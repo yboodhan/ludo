@@ -1,10 +1,13 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     text-align: center;
 }
 
 h2 {
     font-weight: bold;
-    margin: 0.4em;
 }
 
 div {
@@ -65,8 +68,16 @@ div {
     border: 0.01em solid black;
 }
 
+.board-top {
+    padding-top: 1em;
+}
+
+.board-bottom {
+    padding-bottom: 1em;
+}
+
 .board-top, .board-middle, .board-bottom {
-    background-color: black;
+    /* background-color: rgb(192, 190, 192); */
     display: flex;
     justify-content: center;
 }
@@ -84,11 +95,10 @@ div {
 }
 
 .board {
-    padding: 1em;
     display: inline-block;
     border: 1px solid black;
     border-radius: 5%;
-    padding: 1.5em;
+    height: auto;
 }
 
 .token-home {
@@ -158,17 +168,14 @@ button {
 
 #message {
     display: block;
-    margin: 0em 10em 0.8em 10em;
-    font-size: 1em;
-    padding: 1em;
 }
 
 .rollDisplay {
-    margin: 0em 2em 1em 2em;
-    border-radius: 5%;
+    border: 1px solid black;
+    border-radius: 20%;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
     font-weight: bold;
-    border: 1px solid rgba(233, 143, 206, 0.356);
-    background: rgba(243, 124, 180, 0.356);
 }
 
 .win {
@@ -184,9 +191,7 @@ button {
 
 .scoreSheet {
     border-radius: 5%;
-    margin: 0 2em 0 2em;
     padding: 1em;
-    width: 20em;
     border: 1px solid black;
 }
 
@@ -232,11 +237,22 @@ p {
 /* Rules for the game */
 
 #gameRules {
-    margin-top: 6em;
+    min-height: 100vh;
+    max-height: auto;
 }
 
 .rulesList {
     display: inline-block;
     text-align: left;
     line-height: 3em;
+}
+
+#landing {
+    max-height: auto;
+}
+
+#error {
+    border: 1px solid red;
+    padding: 1em;
+    border-radius: 5%;
 }
